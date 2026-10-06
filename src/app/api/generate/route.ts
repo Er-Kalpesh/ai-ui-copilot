@@ -38,10 +38,11 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json({ result: response.text });
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error generating UI:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Failed to generate UI from image';
     return NextResponse.json(
-      { error: error.message || 'Failed to generate UI from image' },
+      { error: errorMessage },
       { status: 500 }
     );
   }
