@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI UI Copilot 🚀
 
-## Getting Started
+> An intelligent, screenshot-to-code generator powered by Next.js, Tailwind CSS, and the new Gemini 3 Flash Preview (`gemini-3-flash-preview`).
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🌟 Overview
+
+**AI UI Copilot** is a cutting-edge web application that transforms screenshots into functional, styled UI components instantly. Built by **Er-Kalpesh**, it demonstrates the seamless integration of Google's state-of-the-art GenAI models with modern frontend web technologies.
+
+With a simple API route, you can provide an image of any web design, and the application leverages the `@google/genai` SDK to generate precise, production-ready React and Tailwind CSS code. 
+
+## ✨ Features
+
+- **Screenshot to Code**: Convert wireframes or screenshots into valid React + Tailwind components.
+- **Next.js App Router**: Takes advantage of React Server Components and modern Next.js 15+ architectural patterns.
+- **Tailwind CSS**: Instant, utility-first styling generated exactly to match your vision.
+- **Gemini 3 Flash Integration**: Uses `gemini-3-flash-preview` for lightning-fast multimodal inference.
+- **TypeScript Ready**: Strong typing for a robust and maintainable codebase.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **AI SDK**: `@google/genai` (Google Gen AI SDK)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ installed
+- A valid Gemini API Key from [Google AI Studio](https://aistudio.google.com/)
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Er-Kalpesh/ai-ui-copilot.git
+   cd ai-ui-copilot
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Configure Environment Variables:**
+   Create a `.env.local` file in the root directory and add your API key:
+   ```env
+   GEMINI_API_KEY=your_gemini_api_key_here
+   ```
+
+4. **Run the Development Server:**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+## 📡 API Reference
+
+### `POST /api/generate`
+
+Accepts an image and an optional prompt, and returns React/Tailwind code.
+
+**Request Body** (FormData):
+- `image`: Blob / File (The screenshot or design image)
+- `prompt` (optional): String (Custom instructions for the AI)
+
+**Response**:
+```json
+{
+  "result": "```tsx\nexport default function Component() { ... }\n```"
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 👨‍💻 About the Author
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Created with ❤️ by **Er-Kalpesh**.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+I'm a passionate developer exploring the intersections of generative AI and modern web engineering. If you like this project, consider giving it a ⭐ on GitHub!
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*This project was scaffolded with `create-next-app`.*
